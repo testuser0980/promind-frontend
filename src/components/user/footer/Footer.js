@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -8,8 +9,13 @@ export default function Footer() {
           <div className="row">
             <div className="col-md-12">
               <span>
-                © Copyright {new Date().getFullYear() - 1} News | Powered by{" "}
-                <a href="http://www.yahoobaba.net/">Yahoo Baba</a>
+                © Copyright {new Date().getFullYear()}{" "}
+                <Link to="/">PROMIND</Link>{" "}
+                {!localStorage.getItem("authToken") && (
+                  <>
+                    | <Link to="/admin/login">Login</Link>
+                  </>
+                )}
               </span>
             </div>
           </div>

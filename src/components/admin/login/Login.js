@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import BlogContext from "../../../context/BlogContext";
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../../news.jpg";
-import { toast } from 'react-toastify';
+import { toast } from "react-toastify";
 
 export default function Login() {
   const context = useContext(BlogContext);
@@ -18,8 +18,8 @@ export default function Login() {
     Login(email, password);
   };
   useEffect(() => {
-    if(localStorage.getItem("authToken") == 'undefined'){
-      JSON.parse(localStorage.removeItem("authToken"))
+    if (localStorage.getItem("authToken") == "undefined") {
+      JSON.parse(localStorage.removeItem("authToken"));
     }
     if (JSON.parse(localStorage.getItem("authToken"))) {
       navigate("/admin");
@@ -31,7 +31,9 @@ export default function Login() {
         <div className="container">
           <div className="row">
             <div className="col-md-offset-4 col-md-4">
-              <img className="logo" src={logo} />
+              <Link to="/">
+                <img className="logo" src={logo} />
+              </Link>
               <h3 className="heading">Admin</h3>
               <form action="" onSubmit={onSubmitHandler}>
                 <div className="form-group">
@@ -64,7 +66,12 @@ export default function Login() {
                   onSubmit={onSubmitHandler}
                 />
               </form>
-              <p style={{marginTop: 10}}>Don't have an account <Link to="/admin/signup"><b>SIGNUP</b></Link></p>
+              <p style={{ marginTop: 10 }}>
+                Don't have an account{" "}
+                <Link to="/admin/signup">
+                  <b>SIGNUP</b>
+                </Link>
+              </p>
             </div>
           </div>
         </div>

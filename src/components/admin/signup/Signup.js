@@ -22,10 +22,12 @@ export default function Signup() {
         <div className="container">
           <div className="row">
             <div className="col-md-offset-4 col-md-4">
-              <img className="logo" src={logo} />
+              <Link to="/">
+                <img className="logo" src={logo} />
+              </Link>
               <h3 className="heading">Admin</h3>
               <form action="" onSubmit={onSubmitHandler}>
-              <div className="form-group">
+                <div className="form-group">
                   <label>Name</label>
                   <input
                     type="text"
@@ -66,7 +68,12 @@ export default function Signup() {
                   onSubmit={onSubmitHandler}
                 />
               </form>
-              <p style={{marginTop: 10}}>Have an account <Link to="/admin/login"><b>LOGIN</b></Link></p>
+              <p style={{ marginTop: 10 }}>
+                Have an account{" "}
+                <Link to="/admin/login">
+                  <b>LOGIN</b>
+                </Link>
+              </p>
             </div>
           </div>
         </div>
