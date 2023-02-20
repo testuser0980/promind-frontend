@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "engines": {
     "node": "18.x",
-    "npm": "9.2.x"
+    "npm": "9.5.x"
   },
   "private": true,
   "dependencies": {
@@ -49,6 +49,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "proxy": "https://promindapi.herokuapp.com/"
+  }
 }

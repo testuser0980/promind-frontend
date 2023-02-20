@@ -9,7 +9,7 @@ export default function BlogState(props) {
   const [allCategories, setAllCategories] = useState([]);
   const [singleBlog, setSingleBLog] = useState([]);
   const Login = async (email, password) => {
-    const url = "/api/auth/login";
+    const url = "https://promindapi.herokuapp.com/api/auth/login";
     const data = await fetch(url, {
       method: "POST",
       headers: {
@@ -32,7 +32,7 @@ export default function BlogState(props) {
     }
   };
   const Signup = async (name, email, password) => {
-    const url = "/api/auth/create/admin";
+    const url = "https://promindapi.herokuapp.com/api/auth/create/admin";
     const data = await fetch(url, {
       method: "POST",
       headers: {
@@ -56,7 +56,7 @@ export default function BlogState(props) {
   };
   const fetchAllBlogs = async () => {
     // e.target.classList.add('loading')
-    const url = "/api/blog/all-blogs";
+    const url = "https://promindapi.herokuapp.com/api/blog/all-blogs";
     const data = await fetch(url, {
       method: "GET",
       headers: {
@@ -70,7 +70,7 @@ export default function BlogState(props) {
     // e.target.classList.remove('loading')
   };
   const fetchAllCategories = async () => {
-    const url = "/api/blog/all-categories";
+    const url = "https://promindapi.herokuapp.com/api/blog/all-categories";
     const data = await fetch(url, {
       method: "GET",
       headers: {
@@ -83,7 +83,7 @@ export default function BlogState(props) {
     setAllCategories(...a);
   };
   const createCategory = async (category) => {
-    const url = "/api/blog/create-category";
+    const url = "https://promindapi.herokuapp.com/api/blog/create-category";
     const data = await fetch(url, {
       method: "POST",
       headers: {
@@ -96,7 +96,7 @@ export default function BlogState(props) {
     console.log(res);
   };
   const createBlog = async (formData) => {
-    const url = "/api/blog/create";
+    const url = "https://promindapi.herokuapp.com/api/blog/create";
     const data = await fetch(url, {
       method: "POST",
       headers: {
@@ -109,7 +109,7 @@ export default function BlogState(props) {
     console.log(res);
   };
   const GetSingleBlog = async (id) => {
-    const url = "/api/blog/single/" + id;
+    const url = "https://promindapi.herokuapp.com/api/blog/single/" + id;
     const data = await fetch(url, {
       method: "GET",
       headers: {
@@ -125,7 +125,7 @@ export default function BlogState(props) {
     setSingleBLog(a);
   };
   const DeleteBlog = async (id) => {
-    const url = "/api/blog/delete/" + id;
+    const url = "https://promindapi.herokuapp.com/api/blog/delete/" + id;
     const data = await fetch(url, {
       method: "DELETE",
       headers: {
